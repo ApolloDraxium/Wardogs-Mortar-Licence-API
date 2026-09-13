@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mortar Licence API.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08d2aa6656dc5f526cc732bc64ee53aa33862af8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mortar Licence API.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mortar Licence API.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
