@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "tzribYoPAjw=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Apollo's PC\\source\\repos\\Mortar Calculator Wardogs\\Mortar Licence API\\Mortar Licence API.Server\\Mortar Licence API.Server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\npgsql\\10.0.0\\npgsql.10.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -55,21 +55,10 @@ app.MapPost("/admin/create-key", async (
     HttpRequest request,
     CreateKeyRequest body) =>
 {
-    string? adminSecret = Environment.GetEnvironmentVariable("MORTAR_ADMIN_SECRET");
-    string suppliedSecret = request.Headers["X-Admin-Key"].FirstOrDefault() ?? "";
+    IResult? authError = CheckAdmin(request);
 
-    if (string.IsNullOrWhiteSpace(adminSecret))
-    {
-        return Results.Problem(
-            "Server administration is not configured.",
-            statusCode: 500
-        );
-    }
-
-    if (!SecureEquals(adminSecret, suppliedSecret))
-    {
-        return Results.Unauthorized();
-    }
+    if (authError is not null)
+        return authError;
 
     string username = body.Username?.Trim() ?? "";
 
@@ -142,6 +131,233 @@ app.MapPost("/admin/create-key", async (
         "Could not generate a unique licence key.",
         statusCode: 500
     );
+});
+
+app.MapGet("/admin/licences", async (HttpRequest request) =>
+{
+    IResult? authError = CheckAdmin(request);
+
+    if (authError is not null)
+        return authError;
+
+    await using var connection = new NpgsqlConnection(GetConnectionString());
+    await connection.OpenAsync();
+
+    const string sql = """
+        SELECT
+            id,
+            key_hint,
+            username,
+            machine_hash IS NOT NULL AS claimed,
+            revoked,
+            created_at,
+            activated_at
+        FROM mortar_licences
+        ORDER BY id;
+        """;
+
+    await using var command = new NpgsqlCommand(sql, connection);
+    await using var reader = await command.ExecuteReaderAsync();
+
+    var licences = new List<object>();
+
+    while (await reader.ReadAsync())
+    {
+        long id = reader.GetInt64(0);
+        string keyHint = reader.GetString(1);
+        string username = reader.GetString(2);
+        bool claimed = reader.GetBoolean(3);
+        bool revoked = reader.GetBoolean(4);
+        DateTime createdAt = reader.GetDateTime(5);
+
+        DateTime? activatedAt =
+            reader.IsDBNull(6)
+                ? null
+                : reader.GetDateTime(6);
+
+        string status =
+            revoked
+                ? "REVOKED"
+                : claimed
+                    ? "CLAIMED"
+                    : "UNCLAIMED";
+
+        licences.Add(new
+        {
+            id,
+            username,
+            keyHint,
+            status,
+            claimed,
+            revoked,
+            createdAt,
+            activatedAt
+        });
+    }
+
+    return Results.Ok(new
+    {
+        success = true,
+        count = licences.Count,
+        licences
+    });
+});
+
+app.MapPost("/admin/licences/{id:long}/revoke", async (
+    HttpRequest request,
+    long id) =>
+{
+    IResult? authError = CheckAdmin(request);
+
+    if (authError is not null)
+        return authError;
+
+    await using var connection = new NpgsqlConnection(GetConnectionString());
+    await connection.OpenAsync();
+
+    const string sql = """
+        UPDATE mortar_licences
+        SET revoked = TRUE
+        WHERE id = @id
+        RETURNING username;
+        """;
+
+    await using var command = new NpgsqlCommand(sql, connection);
+    command.Parameters.AddWithValue("id", id);
+
+    object? result = await command.ExecuteScalarAsync();
+
+    if (result is not string username)
+    {
+        return Results.NotFound(new
+        {
+            success = false,
+            message = "Licence not found."
+        });
+    }
+
+    return Results.Ok(new
+    {
+        success = true,
+        id,
+        username,
+        message = "Licence revoked."
+    });
+});
+
+app.MapPost("/admin/licences/{id:long}/restore", async (
+    HttpRequest request,
+    long id) =>
+{
+    IResult? authError = CheckAdmin(request);
+
+    if (authError is not null)
+        return authError;
+
+    await using var connection = new NpgsqlConnection(GetConnectionString());
+    await connection.OpenAsync();
+
+    const string sql = """
+        UPDATE mortar_licences
+        SET revoked = FALSE
+        WHERE id = @id
+        RETURNING username;
+        """;
+
+    await using var command = new NpgsqlCommand(sql, connection);
+    command.Parameters.AddWithValue("id", id);
+
+    object? result = await command.ExecuteScalarAsync();
+
+    if (result is not string username)
+    {
+        return Results.NotFound(new
+        {
+            success = false,
+            message = "Licence not found."
+        });
+    }
+
+    return Results.Ok(new
+    {
+        success = true,
+        id,
+        username,
+        message = "Licence restored."
+    });
+});
+
+app.MapDelete("/admin/licences/{id:long}", async (
+    HttpRequest request,
+    long id) =>
+{
+    IResult? authError = CheckAdmin(request);
+
+    if (authError is not null)
+        return authError;
+
+    await using var connection = new NpgsqlConnection(GetConnectionString());
+    await connection.OpenAsync();
+
+    const string findSql = """
+        SELECT
+            username,
+            machine_hash
+        FROM mortar_licences
+        WHERE id = @id;
+        """;
+
+    await using var findCommand = new NpgsqlCommand(findSql, connection);
+    findCommand.Parameters.AddWithValue("id", id);
+
+    await using var reader = await findCommand.ExecuteReaderAsync();
+
+    if (!await reader.ReadAsync())
+    {
+        return Results.NotFound(new
+        {
+            success = false,
+            message = "Licence not found."
+        });
+    }
+
+    string username = reader.GetString(0);
+
+    string? machineHash =
+        reader.IsDBNull(1)
+            ? null
+            : reader.GetString(1);
+
+    await reader.CloseAsync();
+
+    if (machineHash is not null)
+    {
+        return Results.Conflict(new
+        {
+            success = false,
+            message = "Claimed licences cannot be deleted. Revoke the licence instead."
+        });
+    }
+
+    const string deleteSql = """
+        DELETE FROM mortar_licences
+        WHERE id = @id;
+        """;
+
+    await using var deleteCommand =
+        new NpgsqlCommand(deleteSql, connection);
+
+    deleteCommand.Parameters.AddWithValue("id", id);
+
+    await deleteCommand.ExecuteNonQueryAsync();
+
+    return Results.Ok(new
+    {
+        success = true,
+        id,
+        username,
+        message = "Licence deleted."
+    });
 });
 
 app.MapPost("/activate", async (ActivationRequest body) =>
@@ -279,16 +495,41 @@ await EnsureDatabaseAsync();
 
 app.Run();
 
-async Task EnsureDatabaseAsync()
+IResult? CheckAdmin(HttpRequest request)
 {
-    string? databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+    string? adminSecret =
+        Environment.GetEnvironmentVariable("MORTAR_ADMIN_SECRET");
 
-    if (string.IsNullOrWhiteSpace(databaseUrl))
+    string suppliedSecret =
+        request.Headers["X-Admin-Key"].FirstOrDefault() ?? "";
+
+    if (string.IsNullOrWhiteSpace(adminSecret))
     {
-        return;
+        return Results.Problem(
+            "Server administration is not configured.",
+            statusCode: 500
+        );
     }
 
-    await using var connection = new NpgsqlConnection(GetConnectionString());
+    if (!SecureEquals(adminSecret, suppliedSecret))
+    {
+        return Results.Unauthorized();
+    }
+
+    return null;
+}
+
+async Task EnsureDatabaseAsync()
+{
+    string? databaseUrl =
+        Environment.GetEnvironmentVariable("DATABASE_URL");
+
+    if (string.IsNullOrWhiteSpace(databaseUrl))
+        return;
+
+    await using var connection =
+        new NpgsqlConnection(GetConnectionString());
+
     await connection.OpenAsync();
 
     const string sql = """
@@ -305,7 +546,9 @@ async Task EnsureDatabaseAsync()
         );
         """;
 
-    await using var command = new NpgsqlCommand(sql, connection);
+    await using var command =
+        new NpgsqlCommand(sql, connection);
+
     await command.ExecuteNonQueryAsync();
 }
 
@@ -332,7 +575,8 @@ string CreateLicenceToken(
         DateTimeOffset.UtcNow.ToUnixTimeSeconds()
     );
 
-    byte[] payloadBytes = JsonSerializer.SerializeToUtf8Bytes(payload);
+    byte[] payloadBytes =
+        JsonSerializer.SerializeToUtf8Bytes(payload);
 
     using RSA rsa = RSA.Create();
 
@@ -354,7 +598,8 @@ string CreateLicenceToken(
 
 string GetConnectionString()
 {
-    string? databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+    string? databaseUrl =
+        Environment.GetEnvironmentVariable("DATABASE_URL");
 
     if (string.IsNullOrWhiteSpace(databaseUrl))
     {
@@ -375,16 +620,19 @@ string GetConnectionString()
             : "";
 
     string database =
-        Uri.UnescapeDataString(uri.AbsolutePath.TrimStart('/'));
+        Uri.UnescapeDataString(
+            uri.AbsolutePath.TrimStart('/')
+        );
 
-    var connectionString = new NpgsqlConnectionStringBuilder
-    {
-        Host = uri.Host,
-        Port = uri.Port > 0 ? uri.Port : 5432,
-        Username = username,
-        Password = password,
-        Database = database
-    };
+    var connectionString =
+        new NpgsqlConnectionStringBuilder
+        {
+            Host = uri.Host,
+            Port = uri.Port > 0 ? uri.Port : 5432,
+            Username = username,
+            Password = password,
+            Database = database
+        };
 
     return connectionString.ConnectionString;
 }
@@ -402,7 +650,9 @@ string GenerateLicenceKey()
         {
             section[i] =
                 characters[
-                    RandomNumberGenerator.GetInt32(characters.Length)
+                    RandomNumberGenerator.GetInt32(
+                        characters.Length
+                    )
                 ];
         }
 
@@ -447,16 +697,12 @@ bool SecureEquals(string left, string right)
 bool IsValidMachineHash(string value)
 {
     if (value.Length != 64)
-    {
         return false;
-    }
 
     foreach (char character in value)
     {
         if (!Uri.IsHexDigit(character))
-        {
             return false;
-        }
     }
 
     return true;

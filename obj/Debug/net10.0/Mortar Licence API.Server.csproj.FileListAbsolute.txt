@@ -1,0 +1,57 @@
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\Mortar Licence API.Server.csproj.AssemblyReference.cache
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\Mortar Licence API.Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\Mortar Licence API.Server.AssemblyInfoInputs.cache
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\Mortar Licence API.Server.AssemblyInfo.cs
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\Mortar Licence API.Server.csproj.CoreCompileInputs.cache
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\Mortar Licence API.Server.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\Mortar Licence API.Server.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\appsettings.json
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Mortar Licence API.Server.staticwebassets.endpoints.json
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Mortar Licence API.Server.exe
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Mortar Licence API.Server.deps.json
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Mortar Licence API.Server.runtimeconfig.json
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Mortar Licence API.Server.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Mortar Licence API.Server.pdb
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Microsoft.Extensions.AmbientMetadata.Application.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Microsoft.Extensions.Compliance.Abstractions.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Microsoft.Extensions.DependencyInjection.AutoActivation.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Microsoft.Extensions.Diagnostics.ExceptionSummarization.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Microsoft.Extensions.Http.Diagnostics.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Microsoft.Extensions.Http.Resilience.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Microsoft.Extensions.Resilience.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Microsoft.Extensions.ServiceDiscovery.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Microsoft.Extensions.ServiceDiscovery.Abstractions.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Microsoft.Extensions.Telemetry.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Microsoft.Extensions.Telemetry.Abstractions.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Microsoft.OpenApi.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Npgsql.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\OpenTelemetry.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\OpenTelemetry.Api.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\OpenTelemetry.Api.ProviderBuilderExtensions.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\OpenTelemetry.Exporter.OpenTelemetryProtocol.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\OpenTelemetry.Extensions.Hosting.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\OpenTelemetry.Instrumentation.AspNetCore.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\OpenTelemetry.Instrumentation.Http.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\OpenTelemetry.Instrumentation.Runtime.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Polly.Core.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Polly.Extensions.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\bin\Debug\net10.0\Polly.RateLimiting.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\scopedcss\bundle\Mortar Licence API.Server.styles.css
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\Mortar L.DAB9004E.Up2Date
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\Mortar Licence API.Server.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\refint\Mortar Licence API.Server.dll
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\Mortar Licence API.Server.pdb
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\Mortar Licence API.Server.genruntimeconfig.cache
+C:\Users\Apollo's PC\source\repos\Mortar Calculator Wardogs\Mortar Licence API\Mortar Licence API.Server\obj\Debug\net10.0\ref\Mortar Licence API.Server.dll
