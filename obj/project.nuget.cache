@@ -1,0 +1,95 @@
+{
+  "version": 2,
+  "dgSpecHash": "1zL0KEMg6KU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Apollo's PC\\source\\repos\\Mortar Calculator Wardogs\\Mortar Licence API\\Mortar Licence API.Server\\Mortar Licence API.Server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.1\\microsoft.aspnetcore.openapi.10.0.1.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\microsoft.extensions.ambientmetadata.application\\10.1.0\\microsoft.extensions.ambientmetadata.application.10.1.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\microsoft.extensions.compliance.abstractions\\10.1.0\\microsoft.extensions.compliance.abstractions.10.1.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\microsoft.extensions.dependencyinjection.autoactivation\\10.1.0\\microsoft.extensions.dependencyinjection.autoactivation.10.1.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\microsoft.extensions.diagnostics.exceptionsummarization\\10.1.0\\microsoft.extensions.diagnostics.exceptionsummarization.10.1.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\microsoft.extensions.http.diagnostics\\10.1.0\\microsoft.extensions.http.diagnostics.10.1.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\microsoft.extensions.http.resilience\\10.1.0\\microsoft.extensions.http.resilience.10.1.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\microsoft.extensions.resilience\\10.1.0\\microsoft.extensions.resilience.10.1.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\microsoft.extensions.servicediscovery\\10.1.0\\microsoft.extensions.servicediscovery.10.1.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\microsoft.extensions.servicediscovery.abstractions\\10.1.0\\microsoft.extensions.servicediscovery.abstractions.10.1.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\microsoft.extensions.telemetry\\10.1.0\\microsoft.extensions.telemetry.10.1.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\microsoft.extensions.telemetry.abstractions\\10.1.0\\microsoft.extensions.telemetry.abstractions.10.1.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\npgsql\\10.0.3\\npgsql.10.0.3.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\opentelemetry\\1.14.0\\opentelemetry.1.14.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\opentelemetry.api\\1.14.0\\opentelemetry.api.1.14.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\opentelemetry.api.providerbuilderextensions\\1.14.0\\opentelemetry.api.providerbuilderextensions.1.14.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\opentelemetry.exporter.opentelemetryprotocol\\1.14.0\\opentelemetry.exporter.opentelemetryprotocol.1.14.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\opentelemetry.extensions.hosting\\1.14.0\\opentelemetry.extensions.hosting.1.14.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\opentelemetry.instrumentation.aspnetcore\\1.14.0\\opentelemetry.instrumentation.aspnetcore.1.14.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\opentelemetry.instrumentation.http\\1.14.0\\opentelemetry.instrumentation.http.1.14.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\opentelemetry.instrumentation.runtime\\1.14.0\\opentelemetry.instrumentation.runtime.1.14.0.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\polly.core\\8.4.2\\polly.core.8.4.2.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\polly.extensions\\8.4.2\\polly.extensions.8.4.2.nupkg.sha512",
+    "C:\\Users\\Apollo's PC\\.nuget\\packages\\polly.ratelimiting\\8.4.2\\polly.ratelimiting.8.4.2.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
+      "projectPath": "C:\\Users\\Apollo's PC\\source\\repos\\Mortar Calculator Wardogs\\Mortar Licence API\\Mortar Licence API.Server\\Mortar Licence API.Server.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Apollo's PC\\source\\repos\\Mortar Calculator Wardogs\\Mortar Licence API\\Mortar Licence API.Server\\Mortar Licence API.Server.csproj",
+      "libraryId": "Microsoft.OpenApi",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'OpenTelemetry.Api' 1.14.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-g94r-2vxg-569j",
+      "projectPath": "C:\\Users\\Apollo's PC\\source\\repos\\Mortar Calculator Wardogs\\Mortar Licence API\\Mortar Licence API.Server\\Mortar Licence API.Server.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Apollo's PC\\source\\repos\\Mortar Calculator Wardogs\\Mortar Licence API\\Mortar Licence API.Server\\Mortar Licence API.Server.csproj",
+      "libraryId": "OpenTelemetry.Api",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'OpenTelemetry.Exporter.OpenTelemetryProtocol' 1.14.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-4625-4j76-fww9",
+      "projectPath": "C:\\Users\\Apollo's PC\\source\\repos\\Mortar Calculator Wardogs\\Mortar Licence API\\Mortar Licence API.Server\\Mortar Licence API.Server.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Apollo's PC\\source\\repos\\Mortar Calculator Wardogs\\Mortar Licence API\\Mortar Licence API.Server\\Mortar Licence API.Server.csproj",
+      "libraryId": "OpenTelemetry.Exporter.OpenTelemetryProtocol",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'OpenTelemetry.Exporter.OpenTelemetryProtocol' 1.14.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-mr8r-92fq-pj8p",
+      "projectPath": "C:\\Users\\Apollo's PC\\source\\repos\\Mortar Calculator Wardogs\\Mortar Licence API\\Mortar Licence API.Server\\Mortar Licence API.Server.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Apollo's PC\\source\\repos\\Mortar Calculator Wardogs\\Mortar Licence API\\Mortar Licence API.Server\\Mortar Licence API.Server.csproj",
+      "libraryId": "OpenTelemetry.Exporter.OpenTelemetryProtocol",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'OpenTelemetry.Exporter.OpenTelemetryProtocol' 1.14.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-q834-8qmm-v933",
+      "projectPath": "C:\\Users\\Apollo's PC\\source\\repos\\Mortar Calculator Wardogs\\Mortar Licence API\\Mortar Licence API.Server\\Mortar Licence API.Server.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Apollo's PC\\source\\repos\\Mortar Calculator Wardogs\\Mortar Licence API\\Mortar Licence API.Server\\Mortar Licence API.Server.csproj",
+      "libraryId": "OpenTelemetry.Exporter.OpenTelemetryProtocol",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}
